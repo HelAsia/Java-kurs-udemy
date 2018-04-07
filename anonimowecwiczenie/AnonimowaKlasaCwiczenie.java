@@ -1,5 +1,9 @@
 package anonimowecwiczenie;
 
+/**
+ * this is comment to documentation
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,6 +11,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AnonimowaKlasaCwiczenie {
+	
+	/**
+	 * this is comment to documentation (class)
+	 * @param args is everything what we do 
+	 */
 	
 	public static void main (String[] args){
 		String word;
