@@ -23,7 +23,45 @@ public class AnonimowaKlasaCwiczenie {
 		
 		System.out.println("List before sorting" + listOfStrings);
 		
-		Comparator criteria = new Comparator(){
+		
+		listOfStrings.sort((o1,o2) -> {
+
+			String a = (String) o1;
+			String b = (String) o1;
+			
+			if(a.length() < b.length())
+				return -1;
+			else if(a.length() > b.length())
+				return 1;
+			
+			return 0;
+		});
+		
+		/*
+		 * Zwyk³a klasa anonimowa:
+		 * 
+		 * listOfStrings.sort(new Comparator(){
+
+			@Override
+			public int compare(Object o1, Object o2) {
+				String a = (String) o1;
+				String b = (String) o1;
+				
+				if(a.length() < b.length())
+					return -1;
+				else if(a.length() > b.length())
+					return 1;
+				
+				return 0;
+			}
+			
+		});*/
+		
+
+		/*
+		 * Klasa anonimowa pierwsza:
+		 * 
+		 * Comparator criteria = new Comparator(){
 
 			@Override
 			public int compare(Object a1, Object b1) {
@@ -39,6 +77,6 @@ public class AnonimowaKlasaCwiczenie {
 		}};
 		
 		Collections.sort(listOfStrings, criteria);
-		System.out.println("List after sorting" + listOfStrings);
+		System.out.println("List after sorting" + listOfStrings);*/
 	}
 }
