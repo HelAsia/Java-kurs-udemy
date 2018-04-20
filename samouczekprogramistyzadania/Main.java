@@ -31,6 +31,9 @@ public class Main {
 		
 		tables.getFiveLetters();
 		System.out.println();
+		
+		tables.invertedTable(methodsTraining.getNumberOne(), methodsTraining.getNumberTwo(), methodsTraining.getNumberThree());
+		System.out.println();
 	}
 }
 
