@@ -3,6 +3,7 @@ package samouczekprogramistyzadania;
 public class Main {
 	public static void main (String [] args){
 		MethodsTraining methodsTraining = new MethodsTraining();
+		Tables tables = new Tables();
 		
 		methodsTraining.yoursActualAge();
 		System.out.println();
@@ -26,6 +27,9 @@ public class Main {
 		System.out.println();
 		
 		methodsTraining.rectangularTriangle(methodsTraining.getNumberOne(), methodsTraining.getNumberTwo(), methodsTraining.getNumberThree());
+		System.out.println();
+		
+		tables.getFiveLetters();
 		System.out.println();
 	}
 }
