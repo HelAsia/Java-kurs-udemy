@@ -98,4 +98,19 @@ public class MethodsTraining {
 		System.out.println("Your number is odd");
 		return false;
 	}
+	
+	public boolean threeFiveNumberDivisible(int numberOne){
+		if(numberOne % 3 == 0 & numberOne % 5 == 0){
+			System.out.println("Your number is divisible by 3 and 5");
+			return true;
+		}else if (numberOne % 3 == 0){
+			System.out.println("Your number is divisible by 3 only");
+			return false;
+		}else if (numberOne % 5 == 0){
+			System.out.println("Your number is divisible by 5 only");
+			return false;
+		}
+		System.out.println("Your number is not divisible by 3 and 5");
+		return false;
+	}
 }
