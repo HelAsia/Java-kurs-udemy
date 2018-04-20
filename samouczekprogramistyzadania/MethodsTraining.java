@@ -13,17 +13,17 @@ public class MethodsTraining {
 		
 		while (checkGoodInput == false){
 			System.out.println("What is your actual age?");
+			
 			try{
-				
 				yourAge = dataFromUser.nextInt();
 				System.out.println("Your actual age is: " + yourAge);
-			
 				checkGoodInput = true;
 				return yourAge;
 			}catch(InputMismatchException e){
 				System.out.println("Your age has to be a number. Try again.");	
 				System.out.println();
 				checkGoodInput = false;
+				dataFromUser.next();
 			}
 		}
 		return 0;	
@@ -39,5 +39,54 @@ public class MethodsTraining {
 			System.out.println("Your actual name is: " + yourName);
 			
 			return yourName;
+	}
+	
+	public int getNumberOne(){
+		int numberOne;
+		boolean checkGoodInput = false;
+		
+		while (checkGoodInput == false){
+			System.out.println("Input first number");
+			try{
+				numberOne = dataFromUser.nextInt();
+				checkGoodInput = true;
+				return numberOne;
+			}catch (InputMismatchException e) {
+				System.out.println("Your first number has to be a number. Try again.");	
+				System.out.println();
+				checkGoodInput = false;
+			}
+		}
+		return 0;
+	}
+	
+	public int getNumberTwo(){
+		int numberOne;
+		boolean checkGoodInput = false;
+		
+		while (checkGoodInput == false){
+			System.out.println("Input second number");
+			try{
+				numberOne = dataFromUser.nextInt();
+				checkGoodInput = true;
+				return numberOne;
+			}catch (InputMismatchException e) {
+				System.out.println("Your second number has to be a number. Try again.");	
+				System.out.println();
+				checkGoodInput = false;
+			}
+		}
+		return 0;
+	}
+	
+	public void addSubtractMultyply(int numberOne, int numberTwo){
+		int add = numberOne + numberTwo;
+		int subtract = numberOne - numberTwo;
+		int multiply = numberOne * numberTwo;
+		
+		System.out.printf("%d + %d = %d%n", numberOne, numberTwo, add);
+		System.out.printf("%d - %d = %d%n", numberOne, numberTwo, subtract);
+		System.out.printf("%d * %d = %d%n", numberOne, numberTwo, multiply);
+		
 	}
 }

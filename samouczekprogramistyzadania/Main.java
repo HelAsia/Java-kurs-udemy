@@ -6,5 +6,7 @@ public class Main {
 		methodsTraining.yoursActualAge();
 		System.out.println();
 		methodsTraining.yourActualName();
+		System.out.println();
+		methodsTraining.addSubtractMultyply(methodsTraining.getNumberOne(), methodsTraining.getNumberTwo());
 	}
 }
