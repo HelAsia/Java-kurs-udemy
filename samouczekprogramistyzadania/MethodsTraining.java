@@ -6,40 +6,6 @@ import java.util.Scanner;
 
 public class MethodsTraining {
 	Scanner dataFromUser = new 	Scanner(System.in);
-
-	public int yoursActualAge(){
-		int yourAge;
-		boolean checkGoodInput = false;
-		
-		while (checkGoodInput == false){
-			System.out.println("What is your actual age?");
-			
-			try{
-				yourAge = dataFromUser.nextInt();
-				System.out.println("Your actual age is: " + yourAge);
-				checkGoodInput = true;
-				return yourAge;
-			}catch(InputMismatchException e){
-				System.out.println("Your age has to be a number. Try again.");	
-				System.out.println();
-				checkGoodInput = false;
-				dataFromUser.next();
-			}
-		}
-		return 0;	
-	}
-	
-	public String yourActualName(){
-		String yourName;
-		
-		System.out.println("What is your actual name?");
-		
-			Scanner dataFromUser = new 	Scanner(System.in);
-			yourName = dataFromUser.nextLine();
-			System.out.println("Your actual name is: " + yourName);
-			
-			return yourName;
-	}
 	
 	public int getNumberOne(){
 		int numberOne;
@@ -77,6 +43,59 @@ public class MethodsTraining {
 			}
 		}
 		return 0;
+	}
+
+	public int yoursActualAge(){
+		int yourAge;
+		boolean checkGoodInput = false;
+		
+		while (checkGoodInput == false){
+			System.out.println("What is your actual age?");
+			
+			try{
+				yourAge = dataFromUser.nextInt();
+				System.out.println("Your actual age is: " + yourAge);
+				checkGoodInput = true;
+				return yourAge;
+			}catch(InputMismatchException e){
+				System.out.println("Your age has to be a number. Try again.");	
+				System.out.println();
+				checkGoodInput = false;
+				dataFromUser.next();
+			}
+		}
+		return 0;	
+	}
+	
+	public int getNumberThree(){
+		int numberThree;
+		boolean checkGoodInput = false;
+		
+		while (checkGoodInput == false){
+			System.out.println("Input third number");
+			try{
+				numberThree = dataFromUser.nextInt();
+				checkGoodInput = true;
+				return numberThree;
+			}catch (InputMismatchException e) {
+				System.out.println("Your third number has to be a number. Try again.");	
+				System.out.println();
+				checkGoodInput = false;
+			}
+		}
+		return 0;
+	}
+	
+	public String yourActualName(){
+		String yourName;
+		
+		System.out.println("What is your actual name?");
+		
+			Scanner dataFromUser = new 	Scanner(System.in);
+			yourName = dataFromUser.nextLine();
+			System.out.println("Your actual name is: " + yourName);
+			
+			return yourName;
 	}
 	
 	public void addSubtractMultyply(int numberOne, int numberTwo){
@@ -124,5 +143,46 @@ public class MethodsTraining {
 		int squareOfNumber = (int)Math.sqrt(numberOne);
 		System.out.println("Your square root of number " + numberOne + " is: " + squareOfNumber);
 		return squareOfNumber;
+	}
+	
+	public boolean rectangularTriangle(int numberOne, int numberTwo, int numberThree){
+		int firstCondition = numberOne + numberTwo;
+		int secondCondition = numberOne + numberThree;
+		int thirdCondition = numberTwo + numberThree;
+		
+		if(firstCondition > numberThree & secondCondition > numberTwo & thirdCondition > numberOne){
+			if(numberOne >= numberTwo & numberOne >= numberThree){
+				if((int)Math.pow(numberOne, 2) == (int)Math.pow(numberTwo, 2) + (int)Math.pow(numberThree, 2)){
+					System.out.println("This is rectangular triangle");
+					return true;
+				}else{
+					System.out.println("This isn't rectangular triangle");
+					return false;
+				}	
+			}else if(numberTwo >= numberOne & numberTwo >= numberThree){
+				if((int)Math.pow(numberTwo, 2) == (int)Math.pow(numberOne, 2) + (int)Math.pow(numberThree, 2)){
+					System.out.println("This is rectangular triangle");
+					return true;
+				}else{
+					System.out.println("This isn't rectangular triangle");
+					return false;
+				}
+			}else if(numberThree >= numberOne & numberThree >= numberTwo){
+				if((int)Math.pow(numberThree, 2) == (int)Math.pow(numberOne, 2) + (int)Math.pow(numberTwo, 2)){
+					System.out.println("This is rectangular triangle");
+					return true;
+				}else{
+					System.out.println("This isn't rectangular triangle");
+					return false;
+				}
+			}else{
+				System.out.println("This isn't rectangular triangle");
+				return false;
+			}
+			
+		}else{
+			System.out.println("This isn't a triangle.");
+			return false;
+		}
 	}
 }

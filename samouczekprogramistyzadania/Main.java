@@ -24,5 +24,9 @@ public class Main {
 		
 		methodsTraining.sqrtOfNumber(methodsTraining.getNumberOne());
 		System.out.println();
+		
+		methodsTraining.rectangularTriangle(methodsTraining.getNumberOne(), methodsTraining.getNumberTwo(), methodsTraining.getNumberThree());
+		System.out.println();
 	}
 }
+
