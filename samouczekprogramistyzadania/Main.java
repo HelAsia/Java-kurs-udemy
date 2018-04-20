@@ -4,7 +4,7 @@ public class Main {
 	public static void main (String [] args){
 		MethodsTraining methodsTraining = new MethodsTraining();
 		
-	/*	methodsTraining.yoursActualAge();
+		methodsTraining.yoursActualAge();
 		System.out.println();
 		
 		methodsTraining.yourActualName();
@@ -17,9 +17,12 @@ public class Main {
 		System.out.println();
 		
 		methodsTraining.threeFiveNumberDivisible(methodsTraining.getNumberOne());
-		System.out.println();*/
+		System.out.println();
 		
 		methodsTraining.powerOfNumber(methodsTraining.getNumberOne(),methodsTraining.getNumberTwo());
+		System.out.println();
+		
+		methodsTraining.sqrtOfNumber(methodsTraining.getNumberOne());
 		System.out.println();
 	}
 }

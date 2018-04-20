@@ -116,8 +116,13 @@ public class MethodsTraining {
 	
 	public int powerOfNumber(int numberOne, int numberTwo){
 		int numberToThePower = (int)Math.pow(numberOne, numberTwo );
-		System.out.println("You number to power of " + numberTwo + " is: " + numberToThePower);
+		System.out.println("Your number to power of " + numberTwo + " is: " + numberToThePower);
 		return numberToThePower;
-		
+	}
+	
+	public int sqrtOfNumber(int numberOne){
+		int squareOfNumber = (int)Math.sqrt(numberOne);
+		System.out.println("Your square root of number " + numberOne + " is: " + squareOfNumber);
+		return squareOfNumber;
 	}
 }
