@@ -113,4 +113,11 @@ public class MethodsTraining {
 		System.out.println("Your number is not divisible by 3 and 5");
 		return false;
 	}
+	
+	public int powerOfNumber(int numberOne, int numberTwo){
+		int numberToThePower = (int)Math.pow(numberOne, numberTwo );
+		System.out.println("You number to power of " + numberTwo + " is: " + numberToThePower);
+		return numberToThePower;
+		
+	}
 }
