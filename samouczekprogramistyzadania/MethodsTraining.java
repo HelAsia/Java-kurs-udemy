@@ -5,6 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MethodsTraining {
+	Scanner dataFromUser = new 	Scanner(System.in);
 
 	public int yoursActualAge(){
 		int yourAge;
@@ -13,15 +14,10 @@ public class MethodsTraining {
 		while (checkGoodInput == false){
 			System.out.println("What is your actual age?");
 			try{
-				Scanner dataFromUser = new 	Scanner(System.in);
+				
 				yourAge = dataFromUser.nextInt();
 				System.out.println("Your actual age is: " + yourAge);
-				try {
-					System.in.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			
 				checkGoodInput = true;
 				return yourAge;
 			}catch(InputMismatchException e){
@@ -31,5 +27,17 @@ public class MethodsTraining {
 			}
 		}
 		return 0;	
+	}
+	
+	public String yourActualName(){
+		String yourName;
+		
+		System.out.println("What is your actual name?");
+		
+			Scanner dataFromUser = new 	Scanner(System.in);
+			yourName = dataFromUser.nextLine();
+			System.out.println("Your actual name is: " + yourName);
+			
+			return yourName;
 	}
 }
