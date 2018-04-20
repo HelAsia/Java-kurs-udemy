@@ -89,4 +89,13 @@ public class MethodsTraining {
 		System.out.printf("%d * %d = %d%n", numberOne, numberTwo, multiply);
 		
 	}
+	
+	public boolean evenNumber(int numberOne){
+		if(numberOne % 2 == 0){
+			System.out.println("Your number is even");
+			return true;
+		}
+		System.out.println("Your number is odd");
+		return false;
+	}
 }

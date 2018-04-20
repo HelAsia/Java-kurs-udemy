@@ -8,5 +8,7 @@ public class Main {
 		methodsTraining.yourActualName();
 		System.out.println();
 		methodsTraining.addSubtractMultyply(methodsTraining.getNumberOne(), methodsTraining.getNumberTwo());
+		System.out.println();
+		methodsTraining.evenNumber(methodsTraining.getNumberOne());
 	}
 }
