@@ -4,10 +4,16 @@ import org.json.*;
 
 public class TemperatureJson {
 	
-	public float temperatureSecond(String city, StringBuffer response){
+	public void temperatureSecond(String html){
 	
-	JSONObject obj = new JSONObject(response);
-	String tempString = obj.getJSONObject("main").getString("temp");
+		JSONObject obj;
+		try {
+			obj = new JSONObject(html);
+			double tempString = obj.getJSONObject("main").getDouble("temp");
+			System.out.println(tempString);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	
 	}
-
 }

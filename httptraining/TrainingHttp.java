@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
+import java.net.MalformedURLException;
 import java.net.Proxy;
 import java.net.URL;
 import java.util.HashMap;
@@ -13,32 +14,48 @@ import java.util.Scanner;
 
 public class TrainingHttp {
 	
-	public static void main (String [] args) throws IOException{
-		String beginning;
-		String ending;
+	public URL urlGetter() {
 		String city;
-		String urlString;
-		
+		Boolean isUrlOk = false;
 		System.out.println("Podaj miasto");  
 		
 		Scanner odczyt = new Scanner(System.in);
 		city = odczyt.next();
-		
+		String beginning;
+		String ending;
+		String urlString;
+
 		beginning = "http://openweathermap.org/data/2.5/weather?q=";
 		ending = "&appid=b6907d289e10d714a6e88b30761fae22";
 		
 		urlString = beginning + city + ending;
 		//System.out.println(urlString);
 		
-		URL url = new URL (urlString);
+		URL url = null;
 		
+		while (isUrlOk == false){
+			try {
+				url = new URL (urlString);
+				isUrlOk = true;
+				
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				isUrlOk = false;		
+			}
+		}
+		return url;
+	}
+
+	public String responseGetter() throws IOException  {
+
 		//URL url = new URL ("http://openweathermap.org/data/2.5/weather?q=Wroclaw&appid=b6907d289e10d714a6e88b30761fae22");
 		
 		// Ustawiamy nasze proxy (TYLKO NA POTRZEBY DEBUGOWANIA!)
 		Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 8080));
 	
 		// Otwiera po³¹czenie
-		HttpURLConnection con = (HttpURLConnection) url.openConnection(proxy);
+		HttpURLConnection con = (HttpURLConnection) urlGetter().openConnection(proxy);
 		
 		// Wysy³a metodê ¿¹dania
 		con.setRequestMethod("GET");
@@ -80,23 +97,15 @@ public class TrainingHttp {
 			response.append(inputLine);
 		}
 		in.close();
-		
-		/*System.out.println("Wys³ano ¿¹danie pod adres: " + url);
-        System.out.println("Kod odpowiedzi: " + responseCode);
-        System.out.println("OdpowiedŸ:");
-        System.out.println(response.toString());*/
-		
+
 		String html = response.toString();
 		
-		Temperature temp = new Temperature();
-		temp.temperature(city, html);
-        
-        
-        //System.out.println("You temperature is: ");
-        
-        
-        //System.out.println("Your temperature is: " + html.substring(tempIndex, pressureIndex));
-        
+		/*Temperature temp = new Temperature();
+		temp.temperature(city, html); 
+		*/
+		System.out.println(response);
+		return html;
+		
 	}
 	
 }
