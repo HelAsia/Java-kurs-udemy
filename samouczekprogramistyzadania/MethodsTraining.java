@@ -1,18 +1,17 @@
 package samouczekprogramistyzadania;
 
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MethodsTraining {
 	Scanner dataFromUser = new 	Scanner(System.in);
 	
-	public int getNumberOne(){
+	public int getNumber(){
 		int numberOne;
 		boolean checkGoodInput = false;
 		
 		while (checkGoodInput == false){
-			System.out.println("Input first number");
+			System.out.println("Input number");
 			try{
 				numberOne = dataFromUser.nextInt();
 				checkGoodInput = true;
@@ -26,25 +25,6 @@ public class MethodsTraining {
 		return 0;
 	}
 	
-	public int getNumberTwo(){
-		int numberOne;
-		boolean checkGoodInput = false;
-		
-		while (checkGoodInput == false){
-			System.out.println("Input second number");
-			try{
-				numberOne = dataFromUser.nextInt();
-				checkGoodInput = true;
-				return numberOne;
-			}catch (InputMismatchException e) {
-				System.out.println("Your second number has to be a number. Try again.");	
-				System.out.println();
-				checkGoodInput = false;
-			}
-		}
-		return 0;
-	}
-
 	public int yoursActualAge(){
 		int yourAge;
 		boolean checkGoodInput = false;
@@ -67,25 +47,7 @@ public class MethodsTraining {
 		return 0;	
 	}
 	
-	public int getNumberThree(){
-		int numberThree;
-		boolean checkGoodInput = false;
 		
-		while (checkGoodInput == false){
-			System.out.println("Input third number");
-			try{
-				numberThree = dataFromUser.nextInt();
-				checkGoodInput = true;
-				return numberThree;
-			}catch (InputMismatchException e) {
-				System.out.println("Your third number has to be a number. Try again.");	
-				System.out.println();
-				checkGoodInput = false;
-			}
-		}
-		return 0;
-	}
-	
 	public String yourActualName(){
 		String yourName;
 		

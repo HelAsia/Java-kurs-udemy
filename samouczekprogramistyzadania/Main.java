@@ -11,28 +11,28 @@ public class Main {
 		methodsTraining.yourActualName();
 		System.out.println();
 		
-		methodsTraining.addSubtractMultyply(methodsTraining.getNumberOne(), methodsTraining.getNumberTwo());
+		methodsTraining.addSubtractMultyply(methodsTraining.getNumber(), methodsTraining.getNumber());
 		System.out.println();
 		
-		methodsTraining.evenNumber(methodsTraining.getNumberOne());
+		methodsTraining.evenNumber(methodsTraining.getNumber());
 		System.out.println();
 		
-		methodsTraining.threeFiveNumberDivisible(methodsTraining.getNumberOne());
+		methodsTraining.threeFiveNumberDivisible(methodsTraining.getNumber());
 		System.out.println();
 		
-		methodsTraining.powerOfNumber(methodsTraining.getNumberOne(),methodsTraining.getNumberTwo());
+		methodsTraining.powerOfNumber(methodsTraining.getNumber(),methodsTraining.getNumber());
 		System.out.println();
 		
-		methodsTraining.sqrtOfNumber(methodsTraining.getNumberOne());
+		methodsTraining.sqrtOfNumber(methodsTraining.getNumber());
 		System.out.println();
 		
-		methodsTraining.rectangularTriangle(methodsTraining.getNumberOne(), methodsTraining.getNumberTwo(), methodsTraining.getNumberThree());
+		methodsTraining.rectangularTriangle(methodsTraining.getNumber(), methodsTraining.getNumber(), methodsTraining.getNumber());
 		System.out.println();
 		
 		tables.getFiveLetters();
 		System.out.println();
 		
-		tables.invertedTable(methodsTraining.getNumberOne(), methodsTraining.getNumberTwo(), methodsTraining.getNumberThree());
+		tables.invertedTable(methodsTraining.getNumber(), methodsTraining.getNumber(), methodsTraining.getNumber());
 		System.out.println();
 	}
 }
