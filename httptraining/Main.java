@@ -1,23 +1,32 @@
 package httptraining;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 	public static void main (String [] args){
-		TrainingHttp train = new TrainingHttp();
-		/*try {
-			train.responseGetter();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		*/
+		
+		String city;
+		
+		System.out.println("Podaj miasto");  
+		
+		Scanner odczyt = new Scanner(System.in);
+		city = odczyt.nextLine();
+		
+		HttpRequestSender requestSender = new HttpRequestSender();
 		TemperatureJson json = new TemperatureJson();
-		try {
-			json.temperatureSecond(train.responseGetter());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		boolean isTemperatureGot = false;
+		
+		while (isTemperatureGot == false){
+			try {
+				json.temperatureGetter(requestSender.responseGetter());
+				isTemperatureGot = true;
+			} catch (IOException e) {
+				e.printStackTrace();
+				isTemperatureGot = false;
+			}
 		}
+		odczyt.close();
 	}
 	
 
