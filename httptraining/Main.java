@@ -6,28 +6,21 @@ import java.util.Scanner;
 public class Main {
 	public static void main (String [] args){
 		
+		Temperature temp = new Temperature();
 		String city;
-		
+
 		System.out.println("Podaj miasto");  
 		
 		Scanner odczyt = new Scanner(System.in);
 		city = odczyt.nextLine();
 		
-		HttpRequestSender requestSender = new HttpRequestSender();
-		TemperatureJson json = new TemperatureJson();
-		boolean isTemperatureGot = false;
+		double temperature = temp.getTemperature(city);
 		
-		while (isTemperatureGot == false){
-			try {
-				json.temperatureGetter(requestSender.responseGetter());
-				isTemperatureGot = true;
-			} catch (IOException e) {
-				e.printStackTrace();
-				isTemperatureGot = false;
-			}
+		if (temperature == 0.0){
+			System.out.println("You have problem with downloading temperature.");
 		}
+		System.out.println("Temperature in " + city + " is: " + temperature );
+	
 		odczyt.close();
 	}
-	
-
 }

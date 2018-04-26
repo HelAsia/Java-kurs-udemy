@@ -6,20 +6,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Scanner;
 
 public class HttpRequestSender{
-	String city;
-	
-	public String getCity(){
-		System.out.println("Podaj miasto");  
-		
-		Scanner odczyt = new Scanner(System.in);
-		city = odczyt.nextLine();
-
-		odczyt.close();
-		return city;
-	}
 
 	public URL getUrl(String city){
 		
@@ -35,16 +23,15 @@ public class HttpRequestSender{
 			System.out.println("Your URL is wrong.");
 			e.printStackTrace();
 		}
-
 		return url;
 	}
 
-	public String responseGetter() throws IOException  {
+	public String getResponse (URL url) throws IOException  {
 		//Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 8080));
 		
 		String inputLine;
 		StringBuffer response = new StringBuffer();
-		HttpURLConnection con = (HttpURLConnection)getUrl(getCity()).openConnection();
+		HttpURLConnection con = (HttpURLConnection)url.openConnection();
 
 		con.setRequestMethod("GET");
 		con.setRequestProperty("Content-Type", "application/json");
