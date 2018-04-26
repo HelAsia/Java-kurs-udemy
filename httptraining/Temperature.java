@@ -4,6 +4,16 @@ import java.io.IOException;
 import org.json.*;
 
 public class Temperature{
+	private static Temperature instance = null; 
+	
+	public static Temperature getInstance(){ 
+		if (instance==null){
+			instance = new Temperature(); 
+		} 
+		return instance; 
+	} 
+	private Temperature() {}
+	
 	JSONObject obj;
 	HttpRequestSender requestSender = new HttpRequestSender();
 
