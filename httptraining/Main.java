@@ -14,12 +14,14 @@ public class Main {
 		Scanner odczyt = new Scanner(System.in);
 		city = odczyt.nextLine();
 		
-		double temperature = temp.getTemperature(city);
-		
-		if (temperature == 0.0){
+		double temperature;
+		try {
+			temperature = temp.getTemperature(city);
+			System.out.println("Temperature in " + city + " is: " + temperature );
+			
+		} catch (Exception e) {
 			System.out.println("You have problem with downloading temperature.");
 		}
-		System.out.println("Temperature in " + city + " is: " + temperature );
 	
 		odczyt.close();
 	}
